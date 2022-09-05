@@ -29,6 +29,11 @@ endif()
 
 # Create the bx target
 add_library( bx STATIC ${BX_SOURCES} )
+if(BGFX_LIBRARY_TYPE STREQUAL STATIC)
+    add_library( bx STATIC ${BX_SOURCES} )
+else()
+    add_library( bx SHARED ${BX_SOURCES} )
+endif()
 
 target_compile_features( bx PUBLIC cxx_std_14 )
 # (note: see bx\scripts\toolchain.lua for equivalent compiler flag)

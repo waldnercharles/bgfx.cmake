@@ -91,7 +91,7 @@ target_include_directories( bgfx
 		$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 # bgfx depends on bx and bimg
-target_link_libraries( bgfx PRIVATE bx bimg )
+target_link_libraries( bgfx PUBLIC bx bimg )
 
 # Frameworks required on iOS, tvOS and macOS
 if( ${CMAKE_SYSTEM_NAME} MATCHES iOS|tvOS )

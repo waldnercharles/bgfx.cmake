@@ -30,7 +30,11 @@ endif()
 file( GLOB BIMG_SOURCES ${BIMG_DIR}/src/*.cpp )
 
 # Create the bimg target
-add_library( bimg STATIC ${BIMG_SOURCES} )
+if(BGFX_LIBRARY_TYPE STREQUAL STATIC)
+    add_library( bimg STATIC ${BIMG_SOURCES} )
+else()
+    add_library( bimg SHARED ${BIMG_SOURCES} )
+endif()
 
 # Add include directory of bimg
 target_include_directories( bimg
