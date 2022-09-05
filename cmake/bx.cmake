@@ -28,7 +28,6 @@ else()
 endif()
 
 # Create the bx target
-add_library( bx STATIC ${BX_SOURCES} )
 if(BGFX_LIBRARY_TYPE STREQUAL STATIC)
     add_library( bx STATIC ${BX_SOURCES} )
 else()
